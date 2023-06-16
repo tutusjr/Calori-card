@@ -18,7 +18,7 @@ export default function Anasayfa() {
             <Navbar/>
             <div className='giris'>
                 <h1 className='alt-baslik'>sağlık asistanınız</h1>
-                <h1 className='ust-baslik'>calorie-card</h1>
+                <h1 className='ust-baslik'>caloıre-card</h1>
                 <img src={image} alt="resim yuklenemedi" />
                 <Link className='katil' to='/Sign'>
                    {!user ?  <button className='katil-btn'>BIZE KATIL!</button> : null}

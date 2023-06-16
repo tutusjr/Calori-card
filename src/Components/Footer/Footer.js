@@ -20,7 +20,7 @@ export default function Footer() {
                 <div className="footer-alt-container">
                     <div className="footer sol">
                     <div className="sol-link">
-                    <NavLink to="/calorie-card">calorie card</NavLink>
+                    <NavLink to="/calorie-card">calorıe card</NavLink>
                     <NavLink to="/saglik">Sağlık</NavLink>
                     <NavLink to="/beslenme">beslenme</NavLink>
                     <NavLink to="/hakkimizda">hakkımızda</NavLink>

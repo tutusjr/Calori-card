@@ -26,14 +26,14 @@ export default function CalorieCard() {
             <div className="card-sell">
                 <div className="card first">
                     <img src={birlesik} alt="" />
-                    <h2 className="card-h2">Calorie-Card</h2>
+                    <h2 className="card-h2">Calorıe-Card</h2>
                     <p className="card-p">Calorie-Card + Online Diyet</p>
                     <span className="card-price">₺1899</span>
                     <button className="card-btn">+</button>
                 </div>
                 <div className="card second">
                     <img src={gym} alt="gym" />
-                    <h2 className="card-h2">Calorie-card</h2>
+                    <h2 className="card-h2">Calorıe-card</h2>
                     <p className="card-p">Calorie-Card + 3 aylık fitness üyeliği</p>
                     <span className="card-price">₺2199</span>
                     <button className="card-btn left">+</button>

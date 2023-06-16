@@ -88,7 +88,7 @@ export default function Navbar() {
                     </li>
                    </ul>)} 
                 </NavLink>
-                <NavLink to="/calorie-card">calorie card</NavLink>
+                <NavLink to="/calorie-card">calorıe card</NavLink>
                 <NavLink to="/hakkimizda">hakkımızda</NavLink>
                 
             </div>
