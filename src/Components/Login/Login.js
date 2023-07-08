@@ -9,7 +9,7 @@ export default function Login() {
     const navigate = useNavigate()
     const home = useNavigate()
     const { setUser } = useAuth()
-    const {handleSubmit ,handleChange, values} = useFormik({
+    useFormik({
         initialValues:{
             username:'',
             password:''

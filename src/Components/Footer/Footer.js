@@ -35,11 +35,11 @@ export default function Footer() {
                     </div>
                     <div className="footer orta">
                         <div className="icons">
-                            <a className="face-a" href="#"><BsFacebook className="face"/></a>
-                            <a className="insta-a" href="#"><BsInstagram className="insta"/></a>
-                            <a className="in-a" href="#"><BsLinkedin className="in"/></a>
-                            <a className="twit-a" href="#"><BsTwitter className="twit"/></a>
-                            <a className="yt-a" href="#"><BsYoutube className="yt"/></a>
+                            <a className="face-a" ><BsFacebook className="face"/></a>
+                            <a className="insta-a" ><BsInstagram className="insta"/></a>
+                            <a className="in-a" ><BsLinkedin className="in"/></a>
+                            <a className="twit-a" ><BsTwitter className="twit"/></a>
+                            <a className="yt-a" ><BsYoutube className="yt"/></a>
                         </div>
                     </div>
                     <div className="footer sag">
