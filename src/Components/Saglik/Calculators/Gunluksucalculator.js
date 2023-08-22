@@ -8,7 +8,7 @@ const Gunluksucalculator = () => {
 
 
   const calculateBmh = () => {
-    if (weight <= 0) {
+    if (weight === 0) {
       alert('Lütfen geçerli değerler girin.');
       return;
     }
@@ -18,7 +18,7 @@ const Gunluksucalculator = () => {
     
     final = weight * activityLevel
     result = final + hava
-    setBmh(parseFloat(result.toFixed(1)));
+    setBmh(result.toFixed(1));
   };
   
 

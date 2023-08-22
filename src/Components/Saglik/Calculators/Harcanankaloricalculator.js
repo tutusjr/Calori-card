@@ -34,12 +34,12 @@ const Harcanankaloricalculator = () => {
         ))}
       </select>
       </label>
-      <label className='range'>
+      <label className='range harcanan'>
         <p className='range-info'>Vücut Ağırlığı (kg)</p>
         <input type="range" className='range-slider' min={0} max={300} value={weight} onChange={(e) => setWeight(Number(e.target.value))} />
         <p className='bilgi'>{weight} kg</p>
       </label>
-      <label className='range'>
+      <label className='range harcanan'>
         <p className='range-info'>Aktivite Süresi (dk)</p>
         <input type="range" className='range-slider' value={duration} min={0} max={600} onChange={(e) => setDuration(Number(e.target.value))} />
         <p className='bilgi'>{duration} dk</p>

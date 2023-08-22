@@ -5,10 +5,15 @@ import birlesik from './images/birlesik1.png'
 import gym from './images/gym.png'
 import cardpers from './images/card-pers.png'
 import Footer from "../Footer/Footer"
+import {Helmet} from 'react-helmet'
 
 export default function CalorieCard() {
     return(
         <>
+        <Helmet Helmet>
+            <title>Calorie-Card Mağaza</title>
+            <meta name='description' content='Calorie-Card Mağaza'/>
+        </Helmet>
         <Navbar/>
         <div className="calorie-container">
             <div className="calorie-header">

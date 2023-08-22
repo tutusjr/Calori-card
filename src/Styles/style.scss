@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -6,7 +7,9 @@
     font-family: 'Poppins', sans-serif;
     transition: 0.3s;
 }
-
+.no-select{
+    user-select: none;
+}
 ul{
     display: flex;
 }
@@ -34,8 +37,9 @@ button{
     border: none;
 }
 html,body{
-    background: #212121;
     height: 100%;
+    background: #212121;
+    scroll-behavior: smooth;
     &::-webkit-scrollbar{
         width: 5px;
         background-color: rgb(167, 166, 166);
@@ -50,6 +54,7 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
 //! Navbar kismi !\\
 
 .navbar{
@@ -60,6 +65,151 @@ html,body{
     transition: 0.3s ease;
     height: 100px;
     width: 100%;
+    .mobile-btn{
+        display: none;
+        background-color: transparent;
+        position: absolute;
+        right: 5%;
+        height: 70px;
+        .user-icon{
+            color: white;
+            font-size: 27px;
+        }
+    }
+    .menus{
+        display: flex;
+        position: relative;
+        right: 2%;
+        align-items: center;
+        justify-content: center;
+        .menu-arrow{
+            .menuler{
+                font-weight: 500;
+                color: rgb(235, 233, 233);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                border-right: 1px solid white;
+                padding: 15px;
+                height: 100%;
+                &.saglik:hover{
+                    .alt-yapi.saglik{
+                        height: 200px;
+                    }
+                }
+                &.beslenme:hover{
+                    .alt-yapi.beslenme{
+                        height: 40px;
+                    }
+                }
+                .sekmeler{
+                    .alt-yapi{
+                    background-color: white;
+                    box-shadow: 0px 3px 20px 0px black;
+                    position: absolute;
+                    list-style: none;
+                    width: max-content;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
+                    &.saglik{
+                        top: 75%;
+                        right: 60%;
+                        height: 0px;
+                    }
+                    &.beslenme{
+                        top:75%;
+                        right: 56%;
+                        height: 0px;
+                        width: 117px;
+                    }
+                    &::-webkit-scrollbar{
+                        width: 2px;
+                        background-color: transparent;
+                    }
+                    &::-webkit-scrollbar-thumb{
+                        border-radius: 10px;
+                        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                        background-color: #555;
+                    }
+                    a{
+                        display: flex;
+                        color: black;
+                        padding: 9px 7px;
+                        font-size: 15px;
+                        text-transform: none;
+                        &:hover{
+                            background-color: rgba(0,0,0,0.2);
+                        }
+                        justify-content: flex-start;
+                        
+                    }
+                }
+                }
+                &:hover{
+                    color: rgba(255,255,255,0.8);
+                }
+            }
+            .mobile-arrow-down{
+                display: none;
+            }
+        }
+        
+    }
+    .logo{
+        position: relative;
+        display: flex;
+        flex: 1;
+        img{
+            position: absolute;
+            height: 100px;
+            cursor: pointer;
+            left: 5%;
+        }
+    }
+    .btn{
+        position: relative;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        transform: translateY(-50%);
+        background: transparent;
+        outline: none;
+        border: 2px solid white;
+        color: white;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        margin-right: 30px;
+        transition: 0.3s ease;
+        &:hover{
+            background-color: white;
+            color: black;
+        }
+        
+        
+    }
+    .user{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .user-name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            height: 30px;
+            border-radius: 30px;
+            background-color: #555;
+            font-size: 11px;
+            text-transform: none;
+            padding: 0px 18px;
+            margin-right: 15px;
+        }
+    }
 }
 
 .scrolled{
@@ -68,129 +218,68 @@ html,body{
     background-color: #434f45;
 }
 
-//logo
-.logo{
-    position: relative;
-    height: 0px;
-    display: flex;
-    flex: 1;
-    img{
-        height: 100px;
-        cursor: pointer;
-        margin-left: 30px;
-    }
-}
+//*modal ile ilgili
 
-//secenekler
-.menus{
-    display: flex;
-    position: relative;
-    right: 2%;
-    align-items: center;
-    justify-content: center;
-    a{
-        font-weight: 500;
-        color: rgb(235, 233, 233);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        border-right: 1px solid white;
-        padding: 15px;
-        height: 40px;
-        &:hover{
-            color: rgba(255,255,255,0.8);
-        }
-    }
-}
-
-//giris yap
-.btn{
-    position: relative;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    transform: translateY(-50%);
-    background: transparent;
+.about-modal{
     outline: none;
-    border: 2px solid white;
-    color: white;
-    height: 40px;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 30px;
-    transition: 0.3s ease;
-    &:hover{
-        background-color: white;
-        color: black;
-    }
+    border: none; 
+    position: absolute;
+    top: 20%;
 }
 
-.user{
+.about-modal-overlay{
+    position: fixed;
+    top:0;
+    left: 0;
     display: flex;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
-    .user-name{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        height: 30px;
-        border-radius: 30px;
-        background-color: #555;
-        font-size: 11px;
-        text-transform: none;
-        padding: 0px 18px;
-        margin-right: 15px;
-    }
+    z-index: 111;
+    background-color: rgba(#000000, .4);
 }
 
-.first{
-    margin-right: 10px ;
-}
-.alt-yapi{
-    background-color: white;
-    box-shadow: 0px 3px 20px 0px black;
-    position: absolute;
-    top: 70%;
-    list-style: none;
-    width: max-content;
-    display: flex;
+/* <menu-bar> ============================ */
+  .menu__icon {
+    background: none;
+    cursor: pointer;
+    width: 2.4rem;
+    height: 2rem;
+    padding: .25rem;
+    display: none;
+    position: fixed;
+    left: 2%;
+    top: 3%;
     flex-direction: column;
-    height: 200px;
-    overflow-y: scroll;
-    &::-webkit-scrollbar{
-        width: 2px;
-        background-color: transparent;
-    }
-    &::-webkit-scrollbar-thumb{
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-        background-color: #555;
-    }
-    a{
-        display: flex;
-        color: black;
-        padding: 0px 7px;
-        font-size: 14px;
-        text-transform: none;
-        &:hover{
-            background-color: rgba(0,0,0,0.2);
-        }
-        justify-content: start;
-        
-    }
-    
-}
-
-.alt-yapi.beslenme{
-    width: 117px;
-    overflow: hidden;
-    height: fit-content;
-}
-
+  }
+  .menu__icon span {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(114, 201, 0);
+  }
+  
+  .menu__icon span+span {
+    margin-top: .563rem;
+  }
+  
+  .menu__icon.active :nth-child(1) {
+    background-color: rgb(255, 59, 48);
+    transform: translateY(10px) rotate(-45deg);
+  }
+  
+  .menu__icon.active :nth-child(2) {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+  
+  .menu__icon.active :nth-child(3) {
+    background-color: rgb(255, 59, 48);
+    transform: translateY(-12px) rotate(45deg);
+  }
+  .menu__icon.active + .navbar{
+    height: 350px;
+  }
 
 //?NAVBAR BITTI?\\
 //!ANASAYFA KISMI!\\
@@ -270,7 +359,6 @@ html,body{
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: start;
             line-height: 27px;
         }
         .sag-foto{
@@ -292,6 +380,7 @@ html,body{
         justify-content: center;
         p{
             font-weight: 300;
+            width:80%;
         }
         .sol-foto{
             position: relative;
@@ -304,7 +393,6 @@ html,body{
         }
         .sag-yazi{
             width: 50%;
-            height: 600px;
             display: flex;
             flex-direction: column;
             padding: 0px 100px;
@@ -313,6 +401,9 @@ html,body{
             line-height: 27px;
             .ikinci-p{
                 margin-top: 20px;
+            }
+            p{
+                width:90%;
             }
         }
     }
@@ -325,174 +416,120 @@ html,body{
         width: 100%;
     }
 }
+//?ANASAYFA BITTI?\\
+//!LOGIN ve KAYIT OL!\\
 
-//!LOGIN SCREEN!\\
-
-.login{
-    .login-home{
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        cursor: pointer;
-        color: white;
-        font-size: 50px;
-    }
-    background: linear-gradient(rgb(0, 169, 37), black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    .form{
-        position: relative;
-        background-color: rgba(0,0,0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 500px;
-        width: 350px;
-        border-radius: 10px;
-        .login-title{
-            position: absolute;
-            text-transform: uppercase;
-            top: 40px;
-            font-size: 35px;
-            color: white;
-        }
-        .input{
-            position: absolute;
-            top: 115px;
-            display: flex;
-            align-items: start;
-            justify-content: center;
-            flex-direction: column;
-            input{
-                outline: none;
-                border: none;
-                height: 33px;
-                padding: 0px 5px;
-                width: 300px;
-                background-color: transparent !important;
-                border-bottom: 2px solid whitesmoke;
-                color: whitesmoke;
-                font-size: 15px;
-            }
-            .overlay{
-                margin-top: 30px;
-                color: whitesmoke;
-            }
-        }
-    }
-}
-
-.giris-btn{
-    position: relative;
-    bottom: 13px;
-    left: 50%;
-    font-size: 15px;
-    transform: translateX(-50%);
-    width: 120px;
-    margin-top: 70px;
-    height: 45px;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    transition: 0.2s ease-in-out;
-    background-color: whitesmoke;
-    &:hover{
-        background-color: rgba(250, 249, 249,0.6);
-        color: greenyellow;
-    }
-}
-
-.login-bottom{
-    position: relative;
-    bottom: -15px;
-    color: whitesmoke;
-    font-size: 15px;
-    text-transform: capitalize;
-    text-decoration: underline;
-    transition: 0.2s;
-    &:hover{
-        text-decoration: none;
-        color: greenyellow;
-    }
-}
-
-//!Kayit ol!\\
-
-.sign{
-    background: linear-gradient(rgb(0, 169, 37), black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    .sign-home{
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        cursor: pointer;
-        color: white;
-        font-size: 50px;
-
-    }
-    .form{
-        background-color: rgba(0,0,0,.5);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 500px;
-        border-radius: 10px;
-        width: 350px;
-        .kayit-baslik{
-            position: absolute;
-            top: 45px;
-            text-transform: uppercase;
-            color: whitesmoke;
-        }
-        .kayit-form{
+    .main-container{
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            input{
-                border: none;
-                outline: none;
-                background-color: transparent;
-                border-bottom: 2px solid whitesmoke;
-                color: whitesmoke;
-                padding:5px;
-                width: 300px;
-            }
-            .overlay{
-                margin-top: 30px;
-                color: whitesmoke;
-                display: flex;
-                align-self: start;
-            }
-            .kayitol-button{
-                bottom: -70px;
-                width: 120px;
-                font-size: 15px;
-                border-radius: 20px;
-                height: 45px;
+            height: 500px;
+            width: 340px;
+            border-radius: 10px;
+        .form{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            .card{
                 position: absolute;
-                background-color: whitesmoke;
-                border: none;
-                outline: none;
-                transition: 0.2s ease;
-                &:hover{
-                    background-color: rgba(250, 249, 249,0.6);
-                    color: greenyellow;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                background: rgba(0, 0, 0, 0.551);
+                box-shadow: 0px 5px 10px 0px black;
+                &.login{
+                    backface-visibility: hidden;
+                    &.active{
+                        transform: rotateY(180deg);
+                    }
+                }
+                &.sign{
+                    transform: rotateY(180deg);
+                    height: 110%;
+                    backface-visibility: hidden;
+                    &.active{
+                        transform: rotate(0deg);
+                    }
+                }
+                .login-title{
+                    position: absolute;
+                    text-transform: uppercase;
+                    text-align: center;
+                    width: 300px;
+                    top: 40px;
+                    font-size: 35px;
+                    color: white;
+                    text-shadow: 0px 1px 20px white;
+                }
+                .input{
+                    position: absolute;
+                    top: 110px;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    .input-container{
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
+                        flex-direction: column;
+                        input{
+                            outline: none;
+                            border: none;
+                            height: 30px;
+                            width: 300px;
+                            background-color: transparent !important;
+                            border-bottom: 2px solid whitesmoke;
+                            color: whitesmoke;
+                            font-size: 15px;
+                            &:focus{
+                                border-bottom: 2px solid greenyellow;
+                            }
+                        }
+                        .overlay{
+                            margin-top: 30px;
+                            color: whitesmoke;
+                        }
+                    }
+                    
+                }
+                .giris-btn{
+                    position: relative;
+                    bottom: 13px;
+                    left: 50%;
+                    font-size: 15px;
+                    transform: translateX(-50%);
+                    width: 120px;
+                    margin-top: 70px;
+                    height: 45px;
+                    border-radius: 15px;
+                    border: none;
+                    outline: none;
+                    transition: 0.2s ease-in-out;
+                    background-color: whitesmoke;
+                    &:hover{
+                        background-color: rgba(250, 249, 249,0.6);
+                        color: greenyellow;
+                    }
+                }
+                .login-bottom{
+                    position: relative;
+                    bottom: -15px;
+                    color: whitesmoke;
+                    font-size: 15px;
+                    text-transform: capitalize;
+                    text-decoration: underline;
+                    transition: 0.2s;
+                    &:hover{
+                        text-decoration: none;
+                        color: greenyellow;
+                    }
                 }
             }
-        }
+        }  
     }
-}
-
+//?LOGIN ve KAYIT OL BITTI?\\
 //!Saglik!\\
 
 .saglik-container{
@@ -500,88 +537,73 @@ html,body{
     position: relative;
     height: min-content;
     overflow: hidden;
-}
-
-.saglik-container img{
-    filter: brightness(0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    object-fit: cover;
-}
-.alt-saglik-container{
-    margin-top: 130px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-}
-.box-container{
-    display: flex;
-    height: fit-content;
-}
-.box-container.bir{
-
-
-}
-.box-container.iki{
-    
-    
-}
-.box-container.uc{
-    
-}
-
-.box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    border-radius: 20px;
-    padding:10px 15px;
-    margin: 30px;
-    width: 260px;
-    height: 450px;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.199);
-    span{
-        text-align: center;
-        z-index: 2;
-        color: white;
-        text-shadow: 1px 3px 10px black;
-        text-transform: uppercase;
-        font-size: 26px;
-        font-weight: bold;
+    img{
+        filter: brightness(0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        object-fit: cover;
+    }
+    .alt-saglik-container{
+        margin-top: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        .box-container{
+            display: flex;
+            height: fit-content;
+            .box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+                position: relative;
+                border-radius: 20px;
+                padding:10px 15px;
+                margin: 30px;
+                width: 260px;
+                height: 450px;
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.199);
+                &:hover img{
+                    transform:scale(1.2);
+                    filter: none;
+                }
+                span{
+                    text-align: center;
+                    z-index: 2;
+                    color: white;
+                    text-shadow: 1px 3px 10px black;
+                    text-transform: uppercase;
+                    font-size: 26px;
+                    font-weight: bold;
+                }
+                img{
+                    position: absolute;
+                    filter: brightness(0.7);
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    border-radius: 20px;
+                    object-fit: cover;
+                    transition: 0.3s ease-in-out;
+                }
+                &.uc{
+                    width: 745px;
+                    height: 330px;
+                }
+            }
+        }
     }
 }
-.box img{
-    position: absolute;
-    filter: brightness(0.7);
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 20px;
-    object-fit: cover;
-    transition: 0.3s ease-in-out;
-}
-.box:hover img{
-    transform:scale(1.2);
-    filter: none;
-}
-
-.box.uc{
-    width: 745px;
-    height: 330px;
-    
-}
-
+//?SAGLIK BITTI?\\
 //!Calorie-card!\\
 
 .calorie-container{
@@ -590,11 +612,12 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     .calorie-header{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        width: 100vw;
+        width: 100%;
         min-height: 850px;
         .card-image{
             overflow: hidden;
@@ -618,7 +641,7 @@ html,body{
             }
         }
         .card-information{
-            justify-content: start;
+            justify-content: flex-start;
             display: flex;
             position: relative;
             min-height: 550px;
@@ -644,9 +667,10 @@ html,body{
                 line-height: 30px;
                 margin-top: 20px;
                 font-size: 18px;
-                &.last-p{
-                    margin-top: 40px;
-                }
+                
+            }
+            .last-p{
+                margin-top: 40px;
             }
             &:hover .arrow{
                 position: absolute;
@@ -657,7 +681,7 @@ html,body{
     }
     .card-sell{
         
-        width: 100vw;
+        width: 100%;
         min-height: 650px;
         background: rgb(234, 234, 208);
         display: flex;
@@ -720,7 +744,7 @@ html,body{
     font-size: 35px;
     font-weight: 300;
     right: 5%;
-    bottom: 14%;
+    bottom: 17%;
     width: 60px;
     height: 60px;
     border-radius: 30px;
@@ -752,13 +776,11 @@ html,body{
 .page-down{
     background-color: beige;
     width: 100%;
-    min-height: 700px;
-    margin-top: 200px;
-    margin-bottom: -100px;
+    height: 700px;
     display: flex;
     justify-content: center;
     .down-left{
-        width: 600px;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -771,7 +793,7 @@ html,body{
     }
     .down-right{
         position: relative;
-        width: 600px;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -785,7 +807,7 @@ html,body{
         cursor: default;
     }
     .price-informations{
-        width: 100%;
+        width: 80%;
         height: 300px;
         display: flex;
         align-items: center;
@@ -860,7 +882,7 @@ html,body{
         }
     }
 }
-
+//?CALORIE-CARD BITTI?\\
 //!Hakkimizda!\\
 
 .about-container{
@@ -897,7 +919,7 @@ html,body{
         }
     }
 }
-
+//?HAKKIMIZDA BITTI?\\
 //!Slider!\\
 
 .slider{
@@ -914,14 +936,14 @@ html,body{
     box-shadow: 1px 1px 10px 1px black;
     position: relative;
     display: flex;
-    flex-shrink: 1;
     right: 10px;
     height: 270px;
     border-radius: 10px;
     &.ikinci{
         height: 360px;
         left: 14px;
-        box-shadow: 0px 0px 20px 1px rgb(74, 74, 74);
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.368);
+        
     }
 }
 
@@ -965,7 +987,6 @@ html,body{
 
 .slide{
     opacity: 0;
-    transition-duration: 1s ease ;
 }
 
 .slide.active{
@@ -973,13 +994,13 @@ html,body{
     transition-duration: 1s;
     transform: scale(1.08);
 }
-
-//!Gunluk-Calori-Ihtiyaci!\\
+//?SLIDER BITTI?\\
+//!HESAPLAMA!\\
 
 .gunluk-kalori-container{
     display: flex;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: rgb(212, 212, 189);
     h1{
@@ -1027,47 +1048,75 @@ html,body{
             flex-direction: column;
             padding: 30px;
             background-color: rgb(180, 180, 160);
-            position: relative;
-            .nabiz-list{
-                padding: 0px 60px;
-                position: absolute;
-                top: 15%;
-                li{
-                    text-align: justify;
-                    font-size: 15.5px;
-                }
+            .nabiz{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &.bir{
+                    h2{
 
+                    }
+                    ol{
+                        display: flex;
+                        align-items: center;
+                        text-align: justify;
+                        flex-direction: column;
+                        justify-content: center;
+                        li{
+                            width: 90%;
+                            margin-top: 10px;
+                            line-height: 25px;
+                            padding: 0px 5px;
+                        }
+                    }
+                }
+                &.iki{
+                    margin-top: 20px;
+                    h2{
+                        text-align: center;
+                    }
+                    p{
+                        height: 250px;
+                    }
+                }
             }
             h2{
-                position: absolute;
+                margin-bottom: 10px;
                 top: 6%;
                 &.nabiz-baslik.iki{
                     top: 44%;
                 }
             }
             p{
-                position: absolute;
-                padding: 0px 120px;
-                top: 20%;
+                width: 90%;
                 line-height: 30px;
+                height: 450px;
+                overflow-y: scroll;
+                padding: 0px 5px;
+                &::-webkit-scrollbar{
+                    width: 3px;
+                    background-color: transparent;
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                    background-color: #555;
+                }
                 &.nabiz-p{
-                    top: 50%;
-                    font-size: 15px;
-                    padding: 0px 55px;
-                    line-height: unset;
-
+                    
                 }
-                &.boykilo{
-                    top: 15%;
-                    padding: 0px 40px;
-                    font-size: 15px;
-                    line-height: 23px;
+                &.gunluk-kalori{
+                    overflow: hidden;
                 }
-                &.gunluksu{
-                    padding: 0px 60px;
-                    line-height: 23px;
-                    top: 15%;
-                    font-size: 15px;
+                &.metabolizma{
+                    overflow: hidden;
+                }
+                &.bel-kalca{
+                    overflow: hidden;
+                }
+                &.harcanan-kalori{
+                    overflow: hidden;
                 }
             }
         }
@@ -1377,14 +1426,15 @@ html,body{
     top: 300%;
     text-decoration: underline;
 }
-
+//?HESAPLAMA BITTI?\\
 //!FOOTER!\\
 
 .footer-container{
     bottom: 0;
     width: 100%;
-    height: 300px;
-    background-color:  #212121;
+    min-height: 250px;
+    overflow: hidden;
+    background: rgb(39, 39, 39);
 }
 
 .saglik-footer{
@@ -1392,34 +1442,35 @@ html,body{
     bottom:0;
     .store-footer{
         position: relative;
-        width: 300px;
+        height: 150px !important;
         z-index: 11;
     }
 }
 
-
-
 .footer-alt-container{
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     height: 100%;
+    overflow: hidden;
     .footer{
-        width: 100%;
+        width: max-content;
         height: 100%;
+        display: flex;
         background: rgb(39, 39, 39);
         &.sol{
             position: relative;
-            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             .sol-link{   
-                height: 220px;
+                height: 200px;
                 display: flex;
                 width: 100%;
                 flex-direction: column;
                 justify-content: center;
-                align-items: start;
+                align-items: flex-start;
                 a{
                     margin-left: 15px;
                     width: fit-content;
@@ -1436,14 +1487,19 @@ html,body{
             }
             
             .sign-kismi{
-                height: 40px;
-                width: 100%;
+                height: 60px;
+                width: 250px;
                 display: flex;
                 justify-content: space-evenly;
                 .btn.footer{
-                    margin: unset;
+                    background-color: transparent;
+                    display: grid;
+                    place-items: center;
                     height: 40px;
-                    width: 120px;
+                    border: 2px solid whitesmoke;
+                    color: whitesmoke;
+                    width: 100px;
+                    font-size: 15px;
                     &:hover{
                         color: greenyellow;
                         background-color: rgb(92, 92, 92);
@@ -1453,15 +1509,13 @@ html,body{
            
         }
         &.orta{
-            width:160%;
-            display: flex;
             align-items: center;
             justify-content: center;
             .icons{
                 display: flex;
                 align-items: center;
-                justify-content: space-evenly;
-                width: 500px;
+                justify-content: space-between;
+                width: 420px;
                 color: white;
                 .face{
                     color: #1877f2;
@@ -1524,25 +1578,24 @@ html,body{
 
         }
         &.sag{
-            display: flex;
             justify-content: center;
             align-items: center;
             .store-footer{
-                height: 200px;
+                height: 150px;
                 cursor: pointer;
-                transform: scale(0.90);
             }
         }
         
     }
 
 }
-
+//?FOOTER BITTI?\\
 //!BESLENME!\\
 
 .beslenme-container{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     height: 100vh;
     background-color: beige;
     .beslenme-giris{
@@ -1552,83 +1605,81 @@ html,body{
         width: 100%;
        
         .beslenme-sol{
-            position: absolute;
-            top: 15%;
-            left: 6%;
-            width: 40%;
+            width: 50%;
             display: flex;
             flex-direction: column;
+            display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: center;
             h2{
                 padding: 15px 0px;
             }
             p{
                 line-height: 28px;
+                width: 90%;
             }
         }
         .beslenme-sag{
-            position: absolute;
-            top: 20%;
-            right: 6%;
-            width: 40%;
+            justify-content: center;
+            width: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: end;
+            
             img{
                 height: 450px;
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px 1px black;
             }
         }
-    }
-    .beslenme-alt{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        min-width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        height: 140px;
-        .alt-btn{
-            font-size: 30px;
-            background-color: greenyellow;
-            border: 2px solid black;
-            box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.507);
-            padding: 5px 20px;
-            left: 30%;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-weight: 500;
-            width: 250px;
-            &:active{
-                transform: scale(0.95);
-            }
-            &.tarifler{
-                left: unset;
-                right: 30%;
-            }
-            &:hover{
-                background-color: rgb(111, 167, 28);
-                color: beige;
+        .beslenme-alt{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            min-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 140px;
+            .alt-btn{
+                font-size: 25px;
+                background-color: greenyellow;
+                border: 1px solid black;
+                box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.507);
+                padding: 5px 20px;
+                left: 30%;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-weight: 500;
+                width: 200px;
+                &:active{
+                    transform: scale(0.95);
+                }
+                &.tarifler{
+                    left: unset;
+                    right: 30%;
+                }
+                &:hover{
+                    background-color: rgb(111, 167, 28);
+                    color: beige;
+                }
             }
         }
     }
+    
 }
-
+//?BESLENME BITTI?\\
 //!Tarifler!\\
 
 .tarifler-container{
-    height: 100%;
+    min-height: max-content;
     width: 100%;
+    background-color: rgb(241, 241, 241);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: beige;
+    flex-direction: column;
     .tarifler-nav{
         display: flex;
         align-items: center;
@@ -1647,135 +1698,866 @@ html,body{
             }
         }
     }
-    .tarifler-giris{
+    .tarifler-baslik{
+        height: 300px;
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        max-width: 80%;
-        height: 490px;
-        width: 900px;
-        p{
-            line-height: 45px;
-            font-size: 22px;
-        }
         h2{
-            margin-top: 40px;
+            margin-top: 50px;
             text-decoration: underline;
+            color: #212121;
+        }
+        p{
+            width: 80%;
+            text-align: justify;
+            color: #212121;
         }
     }
-    .tarifler{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        flex-direction: column;
-        .tarif{
-            display: flex;
-            padding: 0px 20px;
-            flex-direction: column;
-            width: 60%;
-            ul{
-                display: flex;
-                flex-direction: column;
-                justify-content: start;
-                line-height: 45px;
-            }
-            li{
-                margin-left: 30px;
-                list-style: circle;
+    .tarifler-giris{
+        
+        min-height: 1350px;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 sutun */
+        grid-template-rows: 200px 200px 200px 200px 200px 200px; /* 4 satır */
+        gap: 20px;
+        
+        .tarif-box{
+            background-color: rgb(248, 101, 101);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.452);
+            p{
+                color: black;
             }
             h2{
-                text-transform: capitalize;
+                cursor: pointer;
+            }
+            &:hover{
+                box-shadow: 0px 0px 10px 5px rgba(3, 3, 3, 0.699) !important;
+                img{
+                    transform: scale(1.2);
+                }
+            }
+            .tarif-img-box{
+                overflow: hidden;
+                position: relative;
+                height: max-content;
+                box-shadow: 0px 0px 100px 10px rgba(255, 255, 255, 0.534);
+            }
+            &.bir{ 
+                grid-row-start:1 ;
+                grid-row-end:5 ;
+                grid-column-start:1 ;
+                grid-column-end:1;
+                background-color: rgb(134, 6, 81);
+                p{
+                    color: rgba(245, 245, 245, 0.822);
+                    line-height: 24px;
+                }
+                h2{
+                    color: whitesmoke;
+                }
+                .tarif-img{
+                    height: 400px;
+                    img{
+                        height: 400px;
+                        top: 0;
+                        left: 0;
+                        object-fit: cover;                        
+                    }
+                }
+            }
+            &.iki{
+                grid-row-start:1 ;
+                grid-row-end:3 ;
+                grid-column-start:2 ;
+                grid-column-end:5;
+                background-color: rgb(219, 123, 45);
+                .tarif-info{
+                    .fake-views{
+                        p{
+                            color: whitesmoke;
+                        }
+                    }
+                    .fake-stars{
+                        color:purple;
+                    }
+                    p{
+                        color: whitesmoke;
+                    }
+
+                }
+                
+                .tarif-img-box{
+                    .tarif-img{
+                        height: 230px;
+                        img{
+                            height: 230px;
+                        }
+                    }
+                }
                 
             }
-            h1{
-                text-transform: uppercase;
-                margin: 20px 0px 20px 20px;
+            &.uc{
+                grid-row-start:3;
+                grid-row-end:5;
+                grid-column-start:2;
+                grid-column-end:3;
+                background-color: rgb(48, 47, 47);
+                p{
+                    color: rgba(245, 245, 245, 0.822);
+                    font-size: 13.4px !important;
+                }
+                h2{
+                    color: whitesmoke;
+                }
+                .fake-stars{
+                    color: rgb(255, 217, 0);
+                }
             }
-            p{
-                margin: 20px 0px;
+            &.dort{
+                grid-row-start:3 ;
+                grid-row-end:7 ;
+                grid-column-start:4 ;
+                grid-column-end:5;
+                background: rgba(58, 23, 0, 0.808);
+                p{
+                    color: rgba(245, 245, 245, 0.822);
+                    line-height: 24px;
+                }
+                h2{
+                    color: whitesmoke;
+                }
+                .fake-views{
+                    p{
+                        color: whitesmoke;
+                    }
+                }
+                .fake-stars{
+                    color: whitesmoke;
+                }
+                .tarif-img{
+                    height: 400px;
+                }
             }
             &.bes{
-                margin-bottom: 30px;
+                grid-row-start:3 ;
+                grid-row-end:5 ;
+                grid-column-start:3 ;
+                grid-column-end:4;
+                background: #212121;
+                p{
+                    color: rgba(245, 245, 245, 0.822);
+                }
+                h2{
+                    color: whitesmoke;
+                }
+                .fake-stars{
+                    color: rgb(255, 217, 0);
+                }
+            }
+            &.alti{
+                width: 100%;
+                grid-row-start:6 ;
+                grid-row-end:7 ;
+                grid-column-start:1 ;
+                grid-column-end:4;
+                display: flex;
+                background: linear-gradient(to left , rgb(219, 219, 219), rgb(236, 193, 0));
+                p{
+                    color: rgba(0, 0, 0, 0.685);
+                }
+                .fake-views{
+                    p{
+                        color: black;
+                    }
+                }
+                .fake-stars{
+                    color: brown;
+                }
+                :nth-child(1){
+                    order: 2;
+                }
+                .tarif-info{
+                    width: 50%;
+                }
+                .tarif-img-box{
+                    width: 50%;
+                    .tarif-img{
+                        img{
+                            height: 200px;
+                        }
+                    }
+                }
+                
+            }
+            &.yedi{
+                grid-row-start:5 ;
+                grid-row-end:6 ;
+                grid-column-start:1 ;
+                grid-column-end:4;
+                display: flex;
+                background:rgb(182, 58, 20);
+                p{
+                    color: rgba(245, 245, 245, 0.822);
+                }
+                h2{
+                    color: white;
+                }
+                .fake-stars{
+                    color: white;
+                }
+                .tarif-info{
+                    width: 50%;
+                }
+                .tarif-img-box{
+                    width: 50%;
+                    .tarif-img{
+                        img{
+                            height: 200px;
+                        }
+                    }
+                }
+
             }
             
+            .alt-yazi{
+                h2{
+                    padding: 10px 10px;
+                }
+                p{
+                    padding: 0px 10px;
+                    font-size: 13.5px;
+                }
+            }
+            .fake-views{
+                padding: 10px 0px;
+                position: absolute;
+                bottom: 10px;
+                p{
+                    color: white;
+                    padding: 5px 10px;
+                    span{
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .fake-stars{
+                padding: 0px 10px;
+                color: yellowgreen;
+                position: absolute;
+                bottom: 0;
+            }
+            .tarif-img{
+                position: relative;
+                height: 200px;
+                width: 100%;
+                display: flex;
+                img{   
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    left: 0;
+                    top: 0;
+                }
+            }
         }
+        
     }
     
 }
 
-.tarif-img{
-    border-radius: 10px;
+.yemek-container{
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: #11598c;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-    img{
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px 1px black ;
-    }
-    &.ilk{
-        img{
-            height: 500px;
+    .daire{
+        background-color: #166ead77;
+        min-height: 100vh;
+        top: 0;
+        width: 50%;
+        border-radius: 100%;
+        position: absolute;
+        z-index: 1;
+        h1{
+            color: whitesmoke;
+            font-family:'Dancing Script', cursive;
+            font-size: 60px;
+            text-shadow: 1px 1px 10px white;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 5px;
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            &.muffin{
+                font-size: 40px;
+            }
         }
+
     }
-    &.iki{
-        img{
-            height: 700px;
-        }
-    }
-    &.uc{
-        img{
-            height: 600px;
-        }
-    }
-    &.dort{
-        img{
-            height: 500px;
-        }
-    }
-    &.bes{
-        img{
-            height: 500px;
+    .yemek{
+        .yemek-alt{
+            position: absolute;
+            bottom: 0;
+            left:0;
+            z-index: 1;
+            background-color: #042d4a;
+            border-top: 1px solid #37a4f1;
+            height: 73%;
+            width: 100%;
+            display: flex;
+            .yemek-malzeme{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                .baslik{
+                    top: 10%;
+                        font-weight: 400;
+                        text-shadow: 1px 1px 10px black,
+                                     1px 1px 10px black;   
+                        text-align: center;
+                        width: 50%;
+                        z-index: 1;
+                        &.bounty{
+                            right: 5%;
+                        }
+                }
+                .kek-ve-sos{
+                    width: 50%;
+                }
+                .ol{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    height: 350px;
+                    width: max-content;
+                    &.kek{
+                        width: max-content;
+                    }
+                    &.sos{
+                        width: max-content;
+                    }
+                    &.muffin{
+                        height: 450px;
+                        width: 90%;
+                    }
+                    &.genis{
+                        width: 70%;
+                    }
+                    
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        filter: brightness(0.5);
+                    }
+                    
+                    li{
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        z-index: 1;
+                        input{
+                            width: 20px;
+                            height: 20px;
+                            background-color: whitesmoke;
+                            appearance: none;
+                            border-radius: 4px;
+                            margin: 0px 15px;
+                            position: relative;
+                            outline: none;
+                            display: flex;
+                            flex-shrink: 0;
+                            border: none;
+                            cursor: pointer;
+                            box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.459);
+                            &:hover{
+                                background-color: rgba(245, 245, 245, 0.527);
+                            }
+                            &::before{
+                                position: absolute;
+                                content: '\2713';
+                                font-size: 40px;
+                                line-height: 15px;
+                                color: whitesmoke;
+                                transform: scale(0);
+                                transition: 0.3s;
+                            }
+                            &:checked{
+                                background-color: #fc5000;
+                            }
+                            &:checked + label{
+                                color: #fc5000;
+                                text-shadow: 0px 0px 5px  black;
+                            }
+                            &:checked::before{
+                                transform: scale(1);
+                            }
+                        }
+                        label{
+                            color: whitesmoke;
+                            text-shadow: 0px 1px 5px black;
+                            &.muffin{
+                                font-size: 15px;
+                            }
+                            &.kek{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                h2{
+                    position: absolute;
+                    top: -7%;
+                    text-transform: uppercase;
+                    color: white;
+                    font-weight: 300;
+                    letter-spacing: 3px;
+                }
+            }
+            .yemek-yapilis{
+                width: 50%;
+                border-left: 1px solid #37a4f1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                ul{
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        filter:brightness(0.4);
+                    }
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    li{
+                        display: flex;
+                        position: relative;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        text-shadow: 0px 0px 1px whitesmoke;
+                        .kitchen{
+                            transition: 0.01s !important;
+                            display: inline-block;
+                            position: absolute;
+                            color: white;
+                            z-index: 10;
+                            font-size: 45px;
+                            &.blender-iki{
+                                font-size: 50px;
+                            }
+                            &.redis{
+                                font-size: 60px;
+                            }
+                            &.tek{
+                                right:55%;
+                            }
+                            &.cift{
+                                left:55%;
+                            }
+                        }
+                        input{
+                            width: 20px;
+                            height: 20px;
+                            background-color: whitesmoke;
+                            appearance: none;
+                            border-radius: 4px;
+                            margin: 0px 15px;
+                            position: absolute;
+                            outline: none;
+                            display: flex;
+                            border: none;
+                            cursor: pointer;
+                            box-shadow: 0px 2px 10px 1px black;
+                            &:hover{
+                                background-color: rgba(245, 245, 245, 0.527);
+                            }
+                            &::before{
+                                position: absolute;
+                                content: '\2713';
+                                font-size: 40px;
+                                line-height: 15px;
+                                color: whitesmoke;
+                                transform: scale(0);
+                                transition: 0.3s ease-in-out;
+                            }
+                            
+                            &:checked{
+                                background-color: #fc5000;
+                            }
+                            &:checked + label{
+                                color: #fc5000;
+                            }
+                             &:checked + label + .kitchen{
+                                &.cilek{
+                                    color: rgb(255, 79, 79);
+                                }
+                                &.blender{
+                                    color: gray;
+                                }
+                                &.blender-iki{
+                                    color: #1da1f2;
+                                }
+                                &.hint-ceviz{
+                                    color: #ffa276;
+                                }
+                                &.kase{
+                                    color: yellow;
+                                }
+                                &.fridge{
+                                    color: rgb(7, 235, 7);
+                                }
+                                &.kakao{
+                                    color: #8b3800;
+                                }
+                                &.pestle{
+                                    color: rgb(145, 145, 145);
+                                }
+                                &.fruit-cho{
+                                    color: burlywood;
+                                }
+                                &.bowl{
+                                   color:rgb(219, 123, 45);
+                                }
+                                &.firegem{
+                                    color: rgb(250, 27, 27);
+                                }
+                                &.pie{
+                                    color: rgb(24, 13, 13);
+                                }
+                                &.redis{
+                                    color: #1da1f2;
+                                }
+                                &.butter{
+                                    color: rgb(255, 217, 45);
+                                }
+                                &.apot{
+                                    color: cornflowerblue;
+                                }
+                                &.berries{
+                                    color: purple;
+                                }
+                                
+                                
+                             }
+                            
+                            &:checked::before{
+                                transform: scale(1);
+                            }
+                        }
+
+                        label{
+                            color: whitesmoke;
+                            font-size: 13px;
+                            text-align: center;
+                            &.tek{
+                                position: absolute;
+                                left: 20px;
+                                width: 330px;
+                            }
+                            
+                            &.cift{
+                                position: absolute;
+                                right: 18px;
+                                width: 330px;
+                            }
+                            &.hurma{
+                                font-size: 15px;
+                                text-align: center;
+                            }
+                            &.bounty{
+                                top: 11%;
+                            }
+                        }
+                    }
+                    
+                }
+                h2{
+                    position: absolute;
+                    top: -7%;
+                    text-transform: uppercase;
+                    color: white;
+                    font-weight: 300;
+                    letter-spacing: 3px;
+                }
+            }
         }
     }
 }
 
+//?TARIFLER BITTI?\\
 //!PROFIL!\\
 
 .profil{
     height: 100vh;
     width: 100%;
-    background-color: whitesmoke;
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    h1{
+        z-index: 1;
+        color: whitesmoke;
+    }
     button{
         margin-top: 30px;
         font-size: 30px;
         border: 1px solid black;
-        background: black;
+        background: rgb(110, 110, 110);
         color: greenyellow;
         padding: 10px 20px ;
         border-radius: 15px;
+        z-index: 1;
         &:hover{
             color: black;
             background-color: whitesmoke;
         }
     }
 }
-
-
+@mixin sp-layout {
+    @media screen and (max-width: 750px) {
+      @content;
+    }
+  }
+  
+  @function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+  
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+  
+  .star {
+    $star-count: 15;
+    --star-color: white;
+    --star-tail-length: 6em;
+    --star-tail-height: 2px;
+    --star-width: calc(var(--star-tail-length) / 6);
+    --fall-duration: 0.1s;
+    --tail-fade-duration: var(--fall-duration);
+  
+    position: absolute;
+    top: var(--top-offset);
+    left: 0;
+    width: var(--star-tail-length);
+    height: var(--star-tail-height);
+    color: var(--star-color);
+    background: linear-gradient(45deg, currentColor, transparent);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px currentColor);
+    transform: translate3d(104em, 0, 0);
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+    
+    @include sp-layout {
+      // For mobile performance, tail-fade animation will be removed QAQ
+      animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    }
+  
+    @for $i from 1 through $star-count {
+      &:nth-child(#{$i}) {
+        --star-tail-length: #{random_range(500em, 750em) / 100};
+        --top-offset: #{random_range(0vh, 10000vh) / 100};
+        --fall-duration: #{random_range(6000, 12000s) / 1000};
+        --fall-delay: #{random_range(0, 10000s) / 1000};
+      }
+    }
+  
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: calc(var(--star-width) / -2);
+      width: var(--star-width);
+      height: 100%;
+      background: linear-gradient(45deg, transparent, currentColor, transparent);
+      border-radius: inherit;
+      animation: blink 2s linear infinite;
+    }
+  
+    &::before {
+      transform: rotate(45deg);
+    }
+  
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translate3d(-30em, 0, 0);
+    }
+  }
+  
+  @keyframes tail-fade {
+    0%, 50% {
+      width: var(--star-tail-length);
+      opacity: 1;
+    }
+  
+    70%, 80% {
+      width: 0;
+      opacity: 0.4;
+    }
+  
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0.6;
+    }
+  }
+//?PROFIL BITTI?\\
 
 //! Responsive !\\
-
+@media (max-width:1366px){
+    .beslenme-container{
+        .beslenme-giris{
+            .beslenme-sol{
+                p{
+                    line-height: 24px;
+                }
+            }
+            .beslenme-sag{
+                img{
+                    height: 400px;
+                }
+            }
+        }
+    }
+    .yemek-container{
+        
+        .daire{
+            height: 400px;
+            top: 0;
+            h1{
+                font-size: 35px;
+            }
+        }
+        .yemek{
+            .yemek-alt{
+                height: 74%;
+                .yemek-malzeme{
+                    .ol{
+                        li{
+                            label{
+                                font-size: 13px !important;
+                            }
+                        }
+                    }
+                }
+                .yemek-yapilis{
+                    ul{
+                        li{
+                            label{
+                                
+                                &.tek{
+                                    left: 3%;
+                                    width: 280px;
+                                }
+                                &.cift{
+                                    right: 3%;
+                                    width: 280px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .gunluk-kalori-container{
+        h1{
+            top: 2%;
+        }
+        .kalori{
+            &.hesap{
+                .bmh-container{
+                    transform: scale(0.90);
+                }
+            }
+            &.yazi{
+                .nabiz.bir{
+                    h2{
+                        margin: unset;
+                    }
+                }
+                ol{
+                    li{
+                        font-size: 15px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width: 1286px) {
+
+    //?CALORIE?\\
+    .calorie-container{
+        .calorie-header{
+            .card-image{
+                height: 500px;
+                width: 340px;
+            }
+            .card-information{
+                transform: scale(0.91);
+            }
+        }
+        .card-sell{
+            .card{
+                transform: scale(0.85);
+            }
+        }
+    }
+
+    //?NAVBAR?\\
     p{
         font-size: 14px;
     }
     .navbar .btn{
-        right: 2%;
         font-size: 15px;
     }
     .menus{
@@ -1788,7 +2570,7 @@ html,body{
     .ikinci-kisim{
         
         .sag-foto{
-            transform: scale(0.85);
+            transform: scale(0.80);
         }
         .sol-yazi{
             p{
@@ -1800,6 +2582,7 @@ html,body{
     .ucuncu-kisim{
         .sag-yazi{
             width: 80%;
+            padding: 0px 50px !important;
             p{
                 width: 110%;
             }
@@ -1810,8 +2593,8 @@ html,body{
     }
     //?SAGLIK?\\
     .box{
-        width: 200px;
-        height: 400px;
+        width: 220px;
+        height: 420px;
         span{
             font-size: 21px;
         }
@@ -1820,44 +2603,1093 @@ html,body{
             height: 300px;
         }
     }
-    .footer-container{
-        height: 250px;
-    }
     .footer-alt-container{
-        .footer.sol{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .sol-link{
-                height: 170px;
-                    a{
-                        font-size: 13px;    
+        height: 100%;
+        .footer{
+            .sol{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .sol-link{
+                    height: 170px;
+                        a{
+                            font-size: 13px;    
+                        }
+                    }
+                .sign-kismi{
+                    left: 3%;
+                    .btn.footer{
+                        width: 90px;
+                        font-size: 13px;
                     }
                 }
-            .sign-kismi{
-                left: 3%;
-                .btn.footer{
-                    width: 90px;
-                    font-size: 13px;
+            
+            }
+            .orta{
+                .icons{
+                    width: 400px;
                 }
             }
-        
-        }
-        .footer.orta{
-            .icons{
-                width: 400px;
+            .sag{
+                .store-footer{
+                    transform: scale(0.91);
+                }
             }
         }
-        .footer.sag{
-            .store-footer{
-                transform: scale(0.81);
+        }
+    .bmh-container{
+            width: 500px;
+            top: -2%;
+            transform: scale(0.80) !important;
+        }
+    
+    .gunluk-kalori-container{
+        h1{
+            width: max-content;
+        }
+            .kalori{
+                .bmh-baslik{
+                    top: -7%;
+                    &.meta{
+                        top: -30%;
+                    }
+                    &.boy{
+                        top: -20%;
+                    }
+                    &.su{
+                        top: -30%;
+                    }
+                    &.harcanan{
+                        top:-40%;
+                    }
+                    &.nabiz{
+                        top:-25%;
+                    }
+                }
+                &.hesap{
+                    .label-gender{
+                        &.meta{
+                            top: -15%;
+                        }
+                        &.harcanan{
+                            top: -15%;
+                        }
+                    }
+                    .aktivite-container{
+                        margin-top: 20px;
+                        &.su{
+                            margin-top: 50px;
+                            top: unset;
+                            right: 50%;
+                            transform: translateX(50%);
+                        }
+                        &.nabiz{
+                            top: 65%;
+                        }
+                    }
+                    margin: unset;
+                    height: 100vh;
+                    .bmh-btn{
+                        bottom: -20%;
+                        height: 60px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        &.meta{
+                            bottom: -20%;
+                        }
+                        &.boy{
+                            bottom: -30%;
+                        }
+                        &.su{
+                            top: 350%;
+                        }
+                        &.harcanan{
+                            bottom: -70%;
+                        }
+                        &.nabiz{
+                            bottom: -70%;
+                        }
+                    }
+                    .bmh-sonuc{
+                        bottom: -30%;
+                        &.meta{
+                            bottom: -35%;
+                        }
+                        &.boy{
+                            bottom: -55%;
+                        }
+                        &.su{
+                            top: 420%;
+                            bottom: unset;
+                        }
+                        &.harcanan{
+                            bottom: -100%;
+                            top: unset;
+                        }
+                        &.nabiz{
+                            bottom: -100%;
+                            left: 50%;
+                        }
+                    }
+                    .range{
+                        &.harcanan{
+                            top: 60px;
+                        }
+                        .bilgi{
+                            right: 5%;
+                            font-size: 16px;
+                            font-weight: bold;
+                            top: 0;
+                            margin: unset;
+                        }
+                        .range-slider{
+                            width: 500px;
+                            margin: unset;
+                            &.nabiz{
+                                left: 50%;
+                            }
+                        }
+                        .range-info{
+                            margin: unset;
+                            width: 300px;
+                            height: 82px;
+                            left: 8%;
+                        }
+                    }
+                }
+                &.yazi{
+                    height: 100vh;
+                    margin: unset;
+                    h2{
+                        margin: unset;
+                        top: 13%;
+                        font-size: 21px;
+                        text-align: center;
+                    }
+                    p{
+                        margin-top: 40px;
+                        height: 300px;
+                        padding: 0px 10px;
+                    }
+                }
+            }
+        }
+    
+    //? BESLENME ?\\
+    .beslenme-container{
+            .beslenme-giris{
+                .beslenme-sol{
+                    p{
+                        line-height: 24px;
+                    }
+                }
+                .beslenme-sag{
+                    img{
+                        height: 330px;
+                    }
+                }
+            }
+    }
+    .yemek-container{
+        height: 1500px;
+        .daire{
+            width: 100%;
+            h1{
+                top: 12%;
+                font-size: 40px;
+                &.muffin{
+                    top: 15%;
+                }
+            }
+            
+        }
+        &.chia{
+            height: 1400px !important;
+            .yemek{
+                .yemek-malzeme{
+                    height: 100% !important;
+                }
+                .yemek-yapilis{
+                    height: 100% !important;
+                }
+            }
+        }
+        &.muffin{
+            height: 1600px !important;
+        }
+        &.islak-kek{
+            height: 1400px !important;
+            .yemek{
+                .yemek-alt{
+                    .yemek-malzeme{
+                        height: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        .kek-ve-sos{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: unset;
+                        }
+                    }
+                }
+            }
+        }
+        &.bounty{
+            height: 1600px;
+            .yemek{
+                .yemek-alt{
+                    .yemek-malzeme{
+                        .ol{
+                            &.sag{
+                                width: 30%;
+                            }
+                            &.sol{
+                                width: 40%;
+                            }
+                        }
+                    }
+                    .yemek-yapilis{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .yemek{
+            .yemek-alt{
+                flex-direction: column;
+                height: 80%;
+                .yemek-malzeme{
+                    width: 100%;
+                    bottom: 50px;
+                    border: 2px solid #37a4f1;
+                    height: 100% !important;
+                    ol{
+                        &.kek{
+                            width: unset !important;
+                        }
+                        &.sos{
+                            width: unset !important;
+                        }
+                        &.muffin{
+                            width: unset !important;
+                        }
+                    }
+                    &.muffin{
+                        height: 650px;
+                    }
+                }
+                .yemek-yapilis{
+                    width: 100%;
+                    height: 100% !important;
+                    border: 2px solid #37a4f1;
+                    ul{
+                        li{
+                            .kitchen{
+                                margin-right: 5px;
+                                &.blender-iki{
+                                    font-size: 45px;
+                                }
+                                &.redis{
+                                    font-size: 45px;
+                                }
+                            }
+                            .label{
+                                &.tek{
+                                    left: 15%;
+                                }
+                                &.cift{
+                                    right: 15%;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 }
+@media (max-width:1080px) {
+    .beslenme-container{
+        height: 100%;
+        .beslenme-giris{
+            margin-top: 100px;
+            flex-direction: column;
+            .beslenme-sol{
+                width: 100%;
+            }
+            .beslenme-sag{
+                width: 100%;
+                height: 400px;
+            }
+            .beslenme-alt{
+                position: unset;
+                transform: unset;
+                height: 100px;
+            }
+        }
+    }
+    .footer-container{
+            display: grid;
+            place-items: center;
+        .footer-alt-container{
+            width: 100%;
+        }
+    }
+    .anasayfa{
+        .ikinci-kisim{
+            flex-direction: column;
+            height: 650px;
+            .sol-yazi{
+                width: 100%;
+            }
+            .sag-foto{
+                transform: scale(0.85);
+                margin-top: 50px;
+            }
+        }
+        .ucuncu-kisim{
+            flex-direction: column-reverse;
+            height: 700px;
+            .sag-yazi{
+                height: 50%;
+                width: 100% !important;
+                padding: unset !important;
+                margin-top: 30px;
+            }
+            .sol-foto{
+                left: unset;
+                transform: scale(0.75);
+                bottom: 10px;
+            }
+        }
+    }
+    .gunluk-kalori-container{
+        .kalori{
+            &.yazi{
+                p{
+                    
+                }
+            }
+        }
+        
+    }
+}
+@media (max-width:890px) {
+    .anasayfa{
+        .giris{
+            .katil{
+                .katil-btn{
+                    transform: scale(0.90);
+                }
+            }
+        }
+    }
+    .calorie-container{
+        .calorie-header{
+            margin-top: 100px;
+            flex-direction: column-reverse;
+            .card-information{
+                width: 100%;
+                min-height: 350px;
+                p{
+                    margin: unset;
+                }
+                .last-p{
+                   margin-top: unset;
+                }
+            }
+            .card-image{
+                width: 344px;
+                transform: scale(0.85);
+            }
+        }
+        .card-sell{
+            .card{
+                transform: scale(0.80);
+            }
+        }
+        .page-down{
+            flex-direction: column;
+            .down-left{
+                width: 100%;
+                img{
+                    left: unset;
+                }
+            }
+            .down-right{
+                width: 100%;
+                h1{
+                    display: none;
+                }
+            }
+        }
+    }
+    .gunluk-kalori-container{
+        height: 100%;
+        flex-direction: column;
+        .bmh-container{
+            &.boy{
+                h2{
+                    top: -40% !important;
+                }
+                .bmh-btn.boy{
+                    bottom: -50%;
+                }
+                .bmh-sonuc.boy{
+                    bottom: -100%;
+                }
+            }
+        }
+        .kalori{
+            width: 100%;
+            &.hesap{
+                height: 700px;
+            }
+            &.yazi{
+                p{
 
+                }
+            }
+        }
+    }
+    .saglik-container{
+        .alt-saglik-container{
+            .box-container{
+                .box{
+                    margin: unset;
+                    transform: scale(0.90);
+                }
+            }
+        }
+    }
+    .tarifler-container{
+        .tarifler-giris{
+            grid-template-rows: 200px 200px 200px 200px 200px 200px;
+            .tarif-box{
+                display: flex;
+                .tarif-img-box{
+                    height: 200px;
+                    width: 100% !important;
+                    position: absolute;
+                    filter: brightness(0.3);
+                }
+                .tarif-info{
+                    width: 100% !important;
+                    z-index: 1 !important;
+                    p{
+                        font-size: 13px;
+                        line-height: unset;
+                        color: whitesmoke;
+                    }
+                    h2{
+                        color: whitesmoke;
+                    }
+                    .fake-stars{
+                        color:yellowgreen;
+                    }
+                    .fake-views{
+                        p{
+                            color: whitesmoke !important;
+                        }
+                    }
+                }
+                
+                &.bir{ 
+                    grid-row-start:1 ;
+                    grid-row-end:1 ;
+                    grid-column-start:1;
+                    grid-column-end:5;
+                }
+                &.iki{
+                    grid-row-start:2;
+                    grid-row-end:2;
+                    grid-column-start:1 ;
+                    grid-column-end:5;
+                }
+                &.uc{
+                    grid-row-start:3 ;
+                    grid-row-end:3 ;
+                    grid-column-start:1;
+                    grid-column-end:5;
+                    .tarif-info{
+                        width: 100% !important;
+                        z-index:10 !important;
+                        p{
+                            font-size: 13px;
+                            line-height: unset;
+                            color: whitesmoke;
+                        }
+                        h2{
+                            color: whitesmoke;
+                        }
+                    }
+                }
+                &.dort{
+                    grid-row-start:4 ;
+                    grid-row-end:4 ;
+                    grid-column-start:1 ;
+                    grid-column-end:5;
+                }
+                &.bes{
+                    grid-row-start:5 ;
+                    grid-row-end:5 ;
+                    grid-column-start:1 ;
+                    grid-column-end:5;
+                }
+                &.alti{
+                    grid-row-start:6 ;
+                    grid-row-end:6 ;
+                    grid-column-start:1 ;
+                    grid-column-end:5;
+                }
+                &.yedi{
+                    grid-row-start:7 ;
+                    grid-row-end:7 ;
+                    grid-column-start:1 ;
+                    grid-column-end:5;
+                    margin-bottom: 30px;
+                    height: 200px !important;
+                }
+            }
+        }
+    }
+    .footer-alt-container{
+        flex-direction: column;
+        .footer{
+            &.sol{
+                .sol-link{
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100px;
+                }
+                .sign-kismi{
 
+                }
+            }
+            &.orta{
+                .icons{
+                    width: 300px;
+                    a{
+                        font-size: 20px;
+                    }
+                }
+            }
+            &.sag{
+                display: none;
+                .store-footer{
 
+                }
+            }
+        }
+    }
+    .yemek-container{
+        &.bounty{
+            .yemek-malzeme{
+                .baslik.bounty{
+                    right: 2% !important;
+                }
+            }
+        }
+        .daire{
+            width: 100%;
+            h1{
+                width: 100%;
+            }
+        }
+        .yemek{
+            .yemek-alt{
+                flex-direction: column;
+                .yemek-malzeme{
+                    width: 100%;
+                    bottom: 50px;
+                    border: 2px solid #37a4f1;
+                }
+                .yemek-yapilis{
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #37a4f1;
+                    ul{
+                        li{
+                            .label{
+                                &.tek{
+                                    left: 5%;
+                                }
+                                &.cift{
+                                    right: 5%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:760px) {
+    .anasayfa{
+        .giris{
+            .katil{
+                .katil-btn{
+                    font-size: 15px;
+                }
+            }
+            .alt-baslik{
+                font-size: 30px;
+            }
+            .ust-baslik{
+                font-size: 50px;
+            }
+        }
+        .ikinci-kisim{
+            height: 800px;
+            .sol-yazi.p{
+                padding: 0px 5px;
+            }
+        }
+        .ucuncu-kisim{
+            height: 850px;
+        }
+    }
+    .image{
+        right: unset;
+        &.ikinci{
+            left: unset;
+        }
+    }
+    .right-arrow{
+        right: -40%;
+    }
+    .left-arrow{
+        left: -40%;
+    }
+    .navbar{
+        height: 70px;
+        .mobile-btn{
+            display: grid;
+            place-items: center;
+        }
+        .user{
+            height: 70px;
+        }
+        &.active{
+            height: 280px;
+        }
+        .menus{
+            background-color: transparent;
+            overflow: hidden;
+            position: fixed;
+            height: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 90px;
+            left: 0;
+            width: 100%;
+            .menu-arrow{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .menuler{
+                    border: none !important;
+                    height: fit-content;
+                    padding: 10px 15px !important;
+                    &.saglik:hover{
+                        height: none;
+                    }
+                    .sekmeler{
+                        .alt-yapi{
+                            height: 300px;
+                            &.saglik{
+                                top: 0;
+                                left: 13.5%;
+                            }
+                            &.beslenme{
+                                top: 30%;
+                                left: 16.5%;
+                            }
+                            &.saglik.active{
+                                height: 200px;
+                            }
+                            &.beslenme.active{
+                                height: 43px;
+                            }
+                        }
+                    }
+                }
+                .mobile-arrow-down{
+                    display: flex;
+                    font-size: 15px;
+                    color: white;
+                }
+            }
+            
+            &.active{
+                height: 150px !important;
+            }
+            a{
+                opacity: 1;
+                border: none;
+                justify-content: flex-start;
+            }
+        
+        }
+        .logo{
+            a{
+                img{
+                    position: fixed;
+                    height: 70px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .btn{
+            display: none;
+        }
+        .menu__icon{
+            transform: scale(0.90);
+            display: flex;
+        }
+    }
+    .saglik-container{
+        .alt-saglik-container{
+            .box-container{
+                flex-direction: column;
+                .box{
+                    &.uc{
+                        width: 260px;
+                        height: 450px;
+                        img{
+                            object-position: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .yemek-container{
+        .daire{
+            h1{
+                &.islak{
+                    top: 18%;
+                }
+                &.dondurma{
+                    top: 7%;
+                }
+                &.hurma{
+                    top: 8%;
+                    font-size: 30px;
+                }
+            }
+        }
+        &.bounty{
+            .yemek-malzeme{
+                flex-direction: column;
+                .baslik.bounty{
+                    top:52%;
+                    right: unset !important;
+                    width: max-content;
+                }
+                .ol{
+                    width: 80% !important;
+                    &.sag{
+                        margin-top: 40px;
+                        height: 200px;
+                    }
+                    &.sol{
+                        margin-bottom: 20px;
+                        height: 250px;
+                    }
+                }
+            }
+        }
+        height: 1200px;
+        &.islak-kek{
+            height: 1700px !important;
+            .yemek{
+                .yemek-malzeme{
+                    flex-direction: column;
+                    height: 85% !important;
+                    .kek-ve-sos{
+                        .baslik{
+                            &.kek{
+                                top: 5%;
+                            }
+                            &.sos{
+                                top: 48%;
+                            }
+                        }
+                        ol{
+                            &.sos{
+                                margin-top: 100px;
+                                height: 200px;
+                            }
+                            &.kek{
+                                height: 200px;
+                            }
+                            
+                        }
+                    }
+                }
+                .yemek-yapilis{
+                    height: 70% !important;
+                }
+            }
+        }
+        .yemek{
+            .yemek-alt{
+                flex-direction: column;
+                .yemek-malzeme{
+                    width: 100%;
+                    bottom: 50px;
+                    border: 2px solid #37a4f1;
+                }
+                .yemek-yapilis{
+                    width: 100%;
+                    height: 550px;
+                    border: 2px solid #37a4f1;
+                    ul{
+                        li{
+                            .label{
+                                &.tek{
+                                    left:0;
+                                }
+                                &.cift{
+                                    right:0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .calorie-container{
+        .calorie-header{
+            .card-information{
+                .arrow{
+                    top: 96% !important;
+                }
+            }
+        }
+        .card-sell{
+            flex-direction: column;
+        }
+        .page-down{
+            .down-left{
+                transform: scale(0.80);
+            }
+            .price-informations{
+                transform: scale(0.90);
+                height: unset;
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width:555px){
+    .anasayfa{
+        .ikinci-kisim{
+            height: 900px;
+            .sag-foto{
+                right: 50%;
+                transform:scale(0.70);
+            }
+        }
+        .ucuncu-kisim{
+            height: 950px;
+            .sol-foto{
+                transform: scale(0.60);
+                left: unset;
+                margin: unset;
+                height: 400px;
+            }
+            .sag-yazi{
+                height: 50%;
+            }
+        }
+    }
+    .tarifler-container{
+        .tarifler-giris{
+            margin-top: 120px;
+            .tarif-box{
+                .tarif-info{
+                    position: relative;
+                    display: grid;
+                    place-items: center;
+                    .alt-yazi{
+                        p{
+                            display: none;
+                        }
+                        h2{
+                            text-align: center;
+                            font-size: 30px;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .tarifler-baslik{
+            h2{
+                width: 90%;
+                text-align: center;
+                margin-top: 20px;
+            }
+            p{
+                margin-top: 120px;
+            }
+        }
+    }
+    .gunluk-kalori-container{
+        .kalori{
+            &.hesap{
+                .bmh-container{
 
-
-
+                }
+            }
+            &.yazi{
+                height: 100%;
+            }
+        }
+    }
+    .yemek-container{
+        .daire{
+            h1{
+                &.muffin{
+                    top: 10%;
+                    font-size: 30px;
+                }
+                &.bounty{
+                    top: 25%;
+                }
+            }
+        }
+        &.bounty{
+            height: 2000px;
+            .yemek-yapilis{
+                height: 100%;
+            }
+        }
+        .yemek{
+            .yemek-alt{
+                flex-direction: column;
+                .yemek-malzeme{
+                    width: 100%;
+                    bottom: 50px;
+                    border: 2px solid #37a4f1;
+                }
+                .yemek-yapilis{
+                    border: 2px solid #37a4f1;
+                    ul{
+                        li{
+                            label{
+                                position: static !important;
+                            }
+                            input{
+                                position: static !important;
+                                margin-left: 10px;
+                                flex-shrink: 0;
+                            }
+                            .kitchen{
+                                position: static !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .beslenme-container .beslenme-giris .beslenme-sag img{
+        height: 300px;
+    }
+}
+@media (max-width:480px){
+    .anasayfa{
+        .giris{
+            .ust-baslik{
+                font-size: 40px;
+                top: 30%;
+                text-align: center;
+                width: 100%;
+            }
+            .alt-baslik{
+                font-size: 20px;
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .ikinci-kisim{
+            height: 1000px;
+            .sag-foto{
+                transform: scale(0.55);
+                margin: unset;
+            }
+        }
+        .ucuncu-kisim{
+            .sol-foto{
+                margin-top: 50px;
+                transform: scale(0.51);
+                height: 300px;
+                bottom: 0;
+            }
+        }
+    }
+    .right-arrow{
+        display: none;
+    }
+    .left-arrow{
+        display: none;
+    }
+    .footer-alt-container .footer.sol .sol-link{
+        a{
+            margin-left: 3px;
+            padding: 5px;
+            font-size: 14px;
+        }
+    }
+    .beslenme-container .beslenme-giris .beslenme-sag{
+        height: 300px;
+        img{
+            height: 200px;
+        }
+    }
+    .calorie-container{
+        .page-down{
+            .down-left{
+                transform: scale(0.70);
+            }
+        }
+    }
+    .gunluk-kalori-container .kalori.hesap{
+        height: 600px;
+        .aktivite-container{
+            width: 530px;
+            &.gunluk-kalori{
+                width: unset;
+            }
+        }
+        .bmh-container{
+            transform: scale(0.65) !important;
+        }
+    }
+    .about-container{
+        .about-nav{
+            height: 70px;
+            justify-content: center;
+            a{
+                font-size: 14px;
+                margin: unset;
+                left: unset;
+                margin: 0px 5px;
+            }
+        }
+        .about-gobek{
+            p{
+                padding: 30px 0px;
+            }
+        }
+    }
+}

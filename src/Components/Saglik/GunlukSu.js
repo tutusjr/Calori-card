@@ -1,8 +1,13 @@
 import Gunluksucalculator from "./Calculators/Gunluksucalculator";
+import { Helmet } from "react-helmet";
 
 export default function GunlukSu() {
     return (
         <>
+        <Helmet Helmet>
+            <title>Günlük Su İhtiyacı Hesaplama</title>
+            <meta name='description' content='Günlük Su İhtiyacı Hesaplama'/>
+        </Helmet>
         <div className="gunluk-kalori-container">
         <h1> Gunluk su</h1>
         <div className="kalori hesap" >

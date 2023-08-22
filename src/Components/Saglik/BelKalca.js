@@ -1,17 +1,21 @@
 import Belkalcacalculator from "./Calculators/Belkalcacalculator";
-
+import { Helmet } from "react-helmet";
 
 export default function BelKalca() {
     return(
         <>
+        <Helmet Helmet>
+            <title>Bel-Kalça Oranı hesaplama</title>
+            <meta name='description' content='Bel-Kalça Oranı hesaplama'/>
+        </Helmet>
         <div className="gunluk-kalori-container">
-            <h1>Bel kalca</h1>
+            <h1>Bel-kalca</h1>
             <div className="kalori hesap">
                 <Belkalcacalculator/>
             </div>
             <div className= "kalori yazi">
                 <h2>Bel-Kalça Oranı Hakkında</h2>
-                <p>Vücuttaki toplam yağ miktarı önemli olmakla beraber, yağın nerede biriktiğini bilmek daha önemlidir. Karın çevresinde gerçekleşen yağ birikimi, vücudun diğer bölgelerinde (kalça, basen) olan yağ birikiminden daha fazla sağlık risklerine neden olur. Bu risk için basit fakat doğru bir yöntem bel/kalça çevresi ölçümüdür.
+                <p className="bel-kalca">Vücuttaki toplam yağ miktarı önemli olmakla beraber, yağın nerede biriktiğini bilmek daha önemlidir. Karın çevresinde gerçekleşen yağ birikimi, vücudun diğer bölgelerinde (kalça, basen) olan yağ birikiminden daha fazla sağlık risklerine neden olur. Bu risk için basit fakat doğru bir yöntem bel/kalça çevresi ölçümüdür.
 
 Diyetisyen (Beslenme Uzmanı) tarafından esnemeyen mezura ile ölçülmelidir. Doğru ölçümü için uzman yardımı almak önemlidir.
 

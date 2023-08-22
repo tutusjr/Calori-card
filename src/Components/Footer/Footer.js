@@ -1,18 +1,12 @@
-import { Link,NavLink, useNavigate } from "react-router-dom"
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link,NavLink} from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 import {BsInstagram , BsFacebook , BsYoutube ,BsTwitter , BsLinkedin} from 'react-icons/bs'
 import pngwing from './image/pngwing.com.png'
 export default function Footer() {
 
-    const navigate= useNavigate()
+    
     const {user} =useAuth
-    const toLogin = () => {
-        navigate('/login')
-    }
-
-    const toSign = () => {
-        navigate('/sign')
-    }
 
     return(
         <>
@@ -20,14 +14,14 @@ export default function Footer() {
                 <div className="footer-alt-container">
                     <div className="footer sol">
                     <div className="sol-link">
-                    <NavLink to="/calorie-card">calorıe card</NavLink>
                     <NavLink to="/saglik">Sağlık</NavLink>
                     <NavLink to="/beslenme">beslenme</NavLink>
+                    <NavLink to="/calorie-card">calorıe card</NavLink>
                     <NavLink to="/hakkimizda">hakkımızda</NavLink>
                     </div>
                     <div className="sign-kismi">
-                    {!user ? (<button onClick={toLogin} className="btn footer">Giriş Yap</button>): null}
-                    {!user ? (<button onClick={toSign} className="btn footer">Kayıt Ol</button>): null}
+                    {!user ? (<button className="btn footer">Giriş Yap</button>): null}
+                    {!user ? (<button className="btn footer">Kayıt Ol</button>): null}
             <Link className="user" to='/profile'>
                     {user ? <h4 className="user-name">{user.username}</h4> : null }
             </Link>

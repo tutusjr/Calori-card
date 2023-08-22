@@ -51,7 +51,7 @@ const BmhCalculator = () => {
       </label>
 
 
-    <div className='aktivite-container'>
+    <div className='aktivite-container gunluk-kalori'>
       <p className='aktivite-p'>Aktivite Seviyesi</p>
       <label className='aktivite'>
       <input type='radio' name="activityLevel" value={1.2} checked={activityLevel === 1.2} onChange={() => setActivityLevel(1.2)} /> 

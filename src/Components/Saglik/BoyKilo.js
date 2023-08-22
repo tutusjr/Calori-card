@@ -1,8 +1,13 @@
 import Boykilocalculator from "./Calculators/Boykilocalculator"
+import { Helmet } from "react-helmet"
 
 export default function BoyKilo() {
     return(
         <>
+        <Helmet Helmet>
+            <title>Boy-Kilo Endeksi Hesaplama</title>
+            <meta name='description' content='Boy-Kilo Endeksi Hesaplama'/>
+        </Helmet>
         <div  className="gunluk-kalori-container">
             <h1>Boy-kilo endeksi</h1>
             <div className="kalori hesap" >

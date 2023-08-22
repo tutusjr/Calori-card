@@ -1,20 +1,18 @@
 import Navbar from "../Anasayfa/Navbar";
 import { useNavigate } from "react-router-dom";
 import beslenme from './image/saglikli-beslenme-neden-onemlidir.jpg'
+import { Helmet } from "react-helmet";
 
 export default function Beslenme() {
 
     const navigate = useNavigate()
-   
-
-    const toTarifler= () => {
-        navigate('/beslenme/tarifler')
-    }
-
-
 
     return(
         <>
+        <Helmet Helmet>
+            <title>Beslenme</title>
+            <meta name='description' content='Beslenme Sayfasi'/>
+        </Helmet>
         <Navbar/>
         <div className="beslenme-container">
             <div className="beslenme-giris">
@@ -25,11 +23,12 @@ export default function Beslenme() {
             <div className="beslenme-sag">
                 <img src={beslenme} alt="" />
             </div>
+            <div className="beslenme-alt">
+                <button onClick={() => navigate('/beslenme/tarifler')} className="alt-btn tarifler">Tarifler</button>
+            </div>
             </div>
             
-            <div className="beslenme-alt">
-                <button onClick={toTarifler} className="alt-btn tarifler">Tarifler</button>
-            </div>
+            
         </div>
         </>
     )

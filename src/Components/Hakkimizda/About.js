@@ -1,8 +1,14 @@
 import { Link , NavLink } from "react-router-dom"
 import logo from '../Anasayfa/images/logo2temiz.png'
+import { Helmet } from "react-helmet"
+
 export default function Hakkimizda() {
     return(
         <>
+        <Helmet Helmet>
+            <title>Hakkımızda</title>
+            <meta name='description' content='Hakkımızda Sayfasi'/>
+        </Helmet>
         <div className="about-container">
         <nav className="about-nav">
             <Link to='/anasayfa'>Anasayfa</Link>
