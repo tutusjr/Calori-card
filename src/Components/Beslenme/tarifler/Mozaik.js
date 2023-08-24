@@ -1,5 +1,5 @@
-import yapilisbg from './images-tarifler-bg/wooden-background.jpg'
-import malzemebg from './images-tarifler-bg/malzeme-arka-plan.jpg'
+import yapilisbg from './images-tarifler-bg/wooden-background.webp'
+import malzemebg from './images-tarifler-bg/malzeme-arka-plan.webp'
 import {GiButter} from 'react-icons/gi'
 import {FaMortarPestle} from 'react-icons/fa'
 import {GiApothecary} from 'react-icons/gi'

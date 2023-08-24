@@ -1,6 +1,6 @@
-import image4 from './imagesSS/image4.png'
-import image5 from './imagesSS/image5.png'
-import image6 from './imagesSS/image6.png'
+import image4 from './imagesSS/image4.webp'
+import image5 from './imagesSS/image5.webp'
+import image6 from './imagesSS/image6.webp'
 
 export const SliderData2 = [
     {

@@ -2,7 +2,7 @@
 import { Link,NavLink} from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 import {BsInstagram , BsFacebook , BsYoutube ,BsTwitter , BsLinkedin} from 'react-icons/bs'
-import pngwing from './image/pngwing.com.png'
+import pngwing from './image/pngwing.com.webp'
 export default function Footer() {
 
     
@@ -34,6 +34,9 @@ export default function Footer() {
                             <a className="in-a" ><BsLinkedin className="in"/></a>
                             <a className="twit-a" ><BsTwitter className="twit"/></a>
                             <a className="yt-a" ><BsYoutube className="yt"/></a>
+                        </div>
+                        <div className="author">
+                            <p>Created By<span> | Mustafa TUTUS</span></p>
                         </div>
                     </div>
                     <div className="footer sag">

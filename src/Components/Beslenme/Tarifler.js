@@ -1,11 +1,11 @@
 import { NavLink, Link } from "react-router-dom"
-import tarif1 from './image/tarif1.png'
-import tarif4 from './image/4.png'
-import tarif3 from './image/3.png'
-import tarif5 from './image/5.png'
-import tarif2 from './image/t2.jpg'
-import tarif6 from './image/islak-kek.png'
-import tarif7 from './image/mozaik.png'
+import tarif1 from './image/tarif1.webp'
+import tarif4 from './image/4.webp'
+import tarif3 from './image/3.webp'
+import tarif5 from './image/5.webp'
+import tarif2 from './image/t2.webp'
+import tarif6 from './image/islak-kek.webp'
+import tarif7 from './image/mozaik.webp'
 import { useNavigate } from "react-router-dom"
 import {AiFillStar} from 'react-icons/ai'
 import {Helmet} from 'react-helmet'

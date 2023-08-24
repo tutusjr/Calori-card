@@ -1,5 +1,5 @@
-import yapilisbg from './images-tarifler-bg/wooden-background.jpg'
-import malzemebg from './images-tarifler-bg/malzeme-arka-plan.jpg'
+import yapilisbg from './images-tarifler-bg/wooden-background.webp'
+import malzemebg from './images-tarifler-bg/malzeme-arka-plan.webp'
 import {GiBlender} from 'react-icons/gi'
 import {LuBanana} from 'react-icons/lu'
 import {MdOutlineRoomService} from 'react-icons/md'

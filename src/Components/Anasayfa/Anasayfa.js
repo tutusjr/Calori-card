@@ -1,4 +1,4 @@
-import image from './images/1030841.jpg'
+import image from './images/1030841.webp'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'

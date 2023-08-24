@@ -1,12 +1,12 @@
 import Navbar from "../Anasayfa/Navbar"
-import bgimage from './image/saglik-bg.png'
-import calorie from './image/calorie.jpg'
-import meta from './image/metabolizma.png'
-import boykilo from './image/boy-kilo.jpg'
-import nabiz from './image/nabiz.jpg'
+import bgimage from './image/saglik-bg.webp'
+import calorie from './image/calorie.webp'
+import meta from './image/metabolizma.webp'
+import boykilo from './image/boy-kilo.webp'
+import nabiz from './image/nabiz.webp'
 import belkalca from './image/belkalca.jpg'
-import gunluksu from './image/gunluksu.jpg'
-import harcanankalori from  './image/harcanankalori.jpg'
+import gunluksu from './image/gunluksu.webp'
+import harcanankalori from  './image/harcanankalori.webp'
 import { useNavigate} from "react-router-dom"
 import Footer from "../Footer/Footer"
 import { Helmet } from "react-helmet"
