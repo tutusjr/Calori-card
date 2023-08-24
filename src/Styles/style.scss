@@ -1076,9 +1076,6 @@ html,body{
                     h2{
                         text-align: center;
                     }
-                    p{
-                        height: 250px;
-                    }
                 }
             }
             h2{
@@ -1102,21 +1099,6 @@ html,body{
                     border-radius: 10px;
                     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
                     background-color: #555;
-                }
-                &.nabiz-p{
-                    
-                }
-                &.gunluk-kalori{
-                    overflow: hidden;
-                }
-                &.metabolizma{
-                    overflow: hidden;
-                }
-                &.bel-kalca{
-                    overflow: hidden;
-                }
-                &.harcanan-kalori{
-                    overflow: hidden;
                 }
             }
         }
@@ -2509,7 +2491,7 @@ html,body{
     }
     .gunluk-kalori-container{
         h1{
-            top: 2%;
+            top: 1%;
         }
         .kalori{
             &.hesap{
@@ -2557,15 +2539,76 @@ html,body{
     p{
         font-size: 14px;
     }
-    .navbar .btn{
-        font-size: 15px;
-    }
-    .menus{
-        right: 4%;
-        a{
-            font-size: 13px;
+    .navbar{
+        .btn{
+            font-size: 15px;
+        }
+        .menus{
+            right: 4%;
+            a{
+                font-size: 13px;
+            }
+            .menu-arrow{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid whitesmoke;
+                padding: 10px;
+                width: 130px;
+                &:nth-child(1){
+                    justify-content: space-around;
+                    width: 110px;
+                }
+                &:nth-child(2){
+                    justify-content: space-around;
+                }
+                .menuler{
+                    border: none !important;
+                    height: fit-content;
+                    padding: unset;
+                    &.saglik:hover{
+                        .alt-yapi.saglik{
+                            height: 0px;
+                        }
+                    }
+                    &.beslenme:hover{
+                        .alt-yapi.beslenme{
+                            height: 0px;
+                        }
+                    }
+                    .sekmeler{
+                        .alt-yapi{
+                            height: 300px;
+                            &.saglik{
+                                top: 72%;
+                                right: 65%;
+                            }
+                            &.beslenme{
+                                top: 72%;
+                                left: 23.4%;
+                            }
+                            &.saglik.active{
+                                height: 200px;
+                            }
+                            &.beslenme.active{
+                                height: 43px;
+                            }
+                        }
+                    }
+                }
+                .mobile-arrow-down{
+                    display: flex;
+                    font-size: 19px;
+                    color: white;
+                    &.active{
+                        color: greenyellow;
+                        transition: none;
+                    }
+                }
+            }
         }
     }
+    
     //?ANASAYFA?\\
     .ikinci-kisim{
         
@@ -2645,7 +2688,8 @@ html,body{
     
     .gunluk-kalori-container{
         h1{
-            width: max-content;
+            max-width: max-content;
+            text-align: center;
         }
             .kalori{
                 .bmh-baslik{
@@ -2767,8 +2811,8 @@ html,body{
                         text-align: center;
                     }
                     p{
-                        margin-top: 40px;
-                        height: 300px;
+                        margin-top: 20px;
+                        height: 370px;
                         padding: 0px 10px;
                     }
                 }
@@ -3290,6 +3334,16 @@ html,body{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-right: unset;
+                padding: unset;
+                width: unset;
+                &:nth-child(1){
+                    justify-content: unset;
+                    width: unset;
+                }
+                &:nth-child(2){
+                    justify-content: unset;
+                }
                 .menuler{
                     border: none !important;
                     height: fit-content;
@@ -3301,12 +3355,12 @@ html,body{
                         .alt-yapi{
                             height: 300px;
                             &.saglik{
-                                top: 0;
-                                left: 13.5%;
+                                top: 0 !important;
+                                left: 16.5% !important;
                             }
                             &.beslenme{
-                                top: 30%;
-                                left: 16.5%;
+                                top: 30% !important;
+                                left: 19.5% !important;
                             }
                             &.saglik.active{
                                 height: 200px;
@@ -3547,7 +3601,7 @@ html,body{
         .kalori{
             &.hesap{
                 .bmh-container{
-
+                    margin-top: 60px;
                 }
             }
             &.yazi{
@@ -3674,6 +3728,9 @@ html,body{
         .bmh-container{
             transform: scale(0.65) !important;
         }
+    }
+    .gunluk-kalori-container .kalori.yazi p{
+        padding:0px 3px;
     }
     .about-container{
         .about-nav{
