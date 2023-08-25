@@ -6,8 +6,8 @@ Im kinda new Frontend developer i finished my learning about React.js a couple m
 
 https://calorie-card.netlify.app
 
-Here is a link of my website. Language is turkish but ill add other languages
+Here is a link of my website. Language is turkish but i'll add other languages later.
 
-also its not resposive for now. Because i had a limited time to build this. Thank you <3
+It's all resposive now. Thank you <3
 
 # Have a great coding <3
