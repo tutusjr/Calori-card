@@ -13,7 +13,6 @@ export default function Hakkimizda() {
         <nav className="about-nav">
             <Link to='/anasayfa'>Anasayfa</Link>
             <NavLink to='/hakkimizda'>Hakkımızda</NavLink>
-            <Link to='/iletisim'>Iletişim</Link>
         </nav>
         <div className="about-gobek">
             <img src={logo} alt="logo" />
