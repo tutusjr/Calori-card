@@ -72,7 +72,7 @@ export default function EvYapimiBounty(){
                             
                     </div>
                     <div className="yemek-yapilis">
-                        <h2>Yapilis</h2>
+                        <h2 className='bounty-yapilis'>Yapilis</h2>
                             <ul>
                                 <img src={yapilisbg} alt="" />
                                 <li>

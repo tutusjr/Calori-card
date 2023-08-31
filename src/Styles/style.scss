@@ -1513,7 +1513,7 @@ html,body{
                     color: #0a66c2;
                 }
                 .twit{
-                    color: #1da1f2
+                    color: #333;
                 }
                 .insta{
                     color: #e1306c;
@@ -1547,9 +1547,9 @@ html,body{
                         }
                     }
                     &.twit-a:hover{
-                        background: #1da1f2;
+                        background: #333;
                         .twit{
-                            color: whitesmoke;
+                            color: #fafafa;
                         }
                     }
                     &.yt-a:hover{
@@ -3589,6 +3589,11 @@ html,body{
         .tarifler-giris{
             margin-top: 120px;
             .tarif-box{
+                &.alti{
+                    :nth-child(1){
+                        order: unset;
+                    }
+                }
                 .tarif-info{
                     position: relative;
                     display: grid;
@@ -3657,6 +3662,9 @@ html,body{
                     border: 2px solid #37a4f1;
                 }
                 .yemek-yapilis{
+                    .bounty-yapilis{
+                        top: -6%;
+                    }
                     border: 2px solid #37a4f1;
                     ul{
                         li{
